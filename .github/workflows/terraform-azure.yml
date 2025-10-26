@@ -38,3 +38,13 @@ jobs:
         # Checks the syntax and schema of the configuration
         run: terraform validate
         working-directory: ./opdracht/azure
+
+      - name: Terraform Plan
+        # Creates and shows an execution plan
+        run: terraform plan
+        working-directory: ./opdracht/azure  
+
+      - name: Terraform Apply
+        # Applies the changes required to reach the desired state of the configuration
+        run: terraform apply -auto-approve
+        working-directory: ./opdracht/azure  
