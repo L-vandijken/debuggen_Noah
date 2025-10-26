@@ -160,3 +160,5 @@ resource "local_file" "ansible_inventory_azure" {
     azurerm_linux_virtual_machine.vm
   ]
 }
+
+#123
