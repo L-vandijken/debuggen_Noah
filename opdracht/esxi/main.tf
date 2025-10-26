@@ -26,7 +26,7 @@ data "template_file" "cloudinit" {
   }
 }
 
-# Create the 2 web server VM
+# Create the 2 web server VMs
 resource "esxi_guest" "webservers" {
   count      = 2
   guest_name = local.webserver_names[count.index]
@@ -46,7 +46,7 @@ resource "esxi_guest" "webservers" {
   }
   
   provisioner "local-exec" {
-    command = "echo ${self.ip_address} >> ../ansible/vm_ips.txt"
+    command = "echo ${self.ip_address} >> /vm_ips.txt"
   }
 }
 
