@@ -1,6 +1,7 @@
 variable "esxi_hostname" {
   description = "ESXi host address"
-  default     = 192.168.1.3 # Example: Use your actual IP
+  type        = string 
+  default     = "192.168.1.3"  # Example: Use your actual IP
 }
 
 variable "esxi_hostport" {
