@@ -143,7 +143,7 @@ locals {
   azure_inventory_content = templatefile("${path.module}/inventory.tpl", {
     vms_pip = azurerm_public_ip.pip
     prefix  = var.vm_name_prefix
-    user    = var.admin_username //  <- Add this line
+    user    = var.admin_username
   })
 
   existing_inventory_content = fileexists("../ansible/inventory.ini") ? file("../ansible/inventory.ini") : ""
