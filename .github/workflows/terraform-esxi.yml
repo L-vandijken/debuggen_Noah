@@ -32,9 +32,9 @@ jobs:
         # Initializes the backend and downloads providers
         # -backend=false is good practice for validation-only steps
         run: terraform init -backend=false
-        working-directory: ./terraform-esxi
+        working-directory: ./opdracht/esxi
 
       - name: Terraform Validate
         # Checks the syntax and schema of the configuration
         run: terraform validate
-        working-directory: ./terraform-esxi
+        working-directory: ./opdracht/esxi
