@@ -26,7 +26,7 @@ data "template_file" "cloudinit" {
   }
 }
 
-# Create the 2 web server VMs
+# Create the 2 web server VM
 resource "esxi_guest" "webservers" {
   count      = 2
   guest_name = local.webserver_names[count.index]
