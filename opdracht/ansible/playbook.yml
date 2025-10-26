@@ -1,7 +1,7 @@
 ---
 - name: Configure Web Servers
   hosts: all # Target all hosts in the inventory
-  become: true # Use sudo
+  become: true
   gather_facts: true
 
   tasks:

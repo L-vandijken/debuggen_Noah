@@ -153,7 +153,7 @@ resource "local_file" "ansible_inventory_azure" {
   content = templatefile("${path.module}/inventory.tpl", {
     vms_pip = azurerm_public_ip.pip
     prefix  = var.vm_name_prefix
-    user    = var.admin_username # <-- Add this line
+    user    = var.admin_username
   })
   filename        = "../ansible/inventory.ini"
   file_permission = "0644"

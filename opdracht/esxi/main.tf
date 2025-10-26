@@ -18,7 +18,6 @@ locals {
   webserver_names = ["esxi-web-01", "esxi-web-02"]
 }
 
-# Read the cloud-init template
 data "template_file" "cloudinit" {
   template = file("${path.module}/cloudinit.yaml")  
   vars = {

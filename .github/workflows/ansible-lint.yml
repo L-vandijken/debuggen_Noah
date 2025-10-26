@@ -27,6 +27,6 @@ jobs:
         # We target the 'ansible/' directory specifically.
         uses: ansible/ansible-lint-action@v6
         with:
-          targets: "ansible/"
+          targets: "opdracht/ansible/"
           # You can create a .ansible-lint file in your 'ansible/' 
           # directory to customize rules.
