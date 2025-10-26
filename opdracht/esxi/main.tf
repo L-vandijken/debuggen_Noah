@@ -26,6 +26,7 @@ data "template_file" "cloudinit" {
   }
 }
 
+#1
 # Create the 2 web server VMs
 resource "esxi_guest" "webservers" {
   count      = 2
