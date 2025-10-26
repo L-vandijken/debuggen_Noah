@@ -1,7 +1,7 @@
 variable "esxi_hostname" {
   description = "ESXi host address"
   type        = string 
-  default     = "192.168.1.3"  # Example: Use your actual IP
+  default     = "192.168.1.2"  # Example: Use your actual IP
 }
 
 variable "esxi_hostport" {
@@ -30,7 +30,7 @@ variable "esxi_password" {
 variable "disk_store" {
   description = "Datastore name"
   type        = string
-  default     = "datastore1"
+  default     = "vm-disk"
 }
 
 variable "ovf_source" {
@@ -61,7 +61,7 @@ variable "vcpu" {
 variable "ssh_public_key" {
   description = "Your ED25519 SSH public key"
   type        = string
-  default     = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAe8Ilbjo2qjAKgneNmebSczNm06KuTrUbhZTlOj9PQe student@DESKTOP-1NUD89T" 
+  default     = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFTpBJNPuYjaDheQjVLVZas37Q9tyKuoT9YcN+SvTxc5 student@DESKTOP-1NUD89T" 
 }
 
 variable "vm_user" {
