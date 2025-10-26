@@ -40,5 +40,3 @@
       changed_when: compose_up.rc == 0
       # We must run this as the user in the docker group
       become: false
-      # Note: this command runs as the SSH user (iacuser),
-      # which we added to the 'docker' group in cloud-init.
