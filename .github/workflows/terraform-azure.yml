@@ -1,0 +1,40 @@
+# This workflow validates the Azure Terraform configuration.
+# It runs 'terraform init' and 'terraform validate'.
+
+name: 4 - Terraform Azure Validate
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - 'opdracht/azure/main.tf' # Only run if files in 'terraform-azure/' change
+  pull_request:
+    branches: [ "main" ]
+    paths:
+      - 'opdracht/azure/main.tf'
+
+jobs:
+  validate-terraform-azure:
+    name: Validate Terraform Azure
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        # Installs the Terraform CLI
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.8.0 # Or your desired version
+
+      - name: Terraform Init
+        # Initializes the backend and downloads providers
+        # -backend=false is good practice for validation-only steps
+        run: terraform init -backend=false
+        working-directory: ./terraform-azure
+
+      - name: Terraform Validate
+        # Checks the syntax and schema of the configuration
+        run: terraform validate
+        working-directory: ./terraform-azure

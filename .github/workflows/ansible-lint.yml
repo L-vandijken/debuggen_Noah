@@ -1,0 +1,32 @@
+# This workflow lints Ansible playbooks using ansible-lint.
+# It runs on any push or pull request to the 'main' branch.
+
+name: 2 - Ansible Lint
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - 'opdracht/ansible/playbook.yml' # Only run if files in 'ansible/' change
+  pull_request:
+    branches: [ "main" ]
+    paths:
+      - 'opdracht/ansible/playbook.yml'
+
+jobs:
+  lint-ansible:
+    name: Lint Ansible Playbooks
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Run Ansible Lint
+        # This action will find and lint all playbooks in the repo
+        # We target the 'ansible/' directory specifically.
+        uses: ansible/ansible-lint-action@v6
+        with:
+          targets: "ansible/"
+          # You can create a .ansible-lint file in your 'ansible/' 
+          # directory to customize rules.
